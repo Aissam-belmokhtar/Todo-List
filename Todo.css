@@ -1,0 +1,194 @@
+:root{
+  --input_color : #C3C1E5;
+  --buttons_clr : #6C63FF;
+  --text_font : "Nunito",sans-serif;
+  
+
+
+}
+body{
+  justify-content: center;
+  font-family: var(--text_font);
+  
+}
+.todo-list{
+
+  display: flex;
+  justify-content: center;
+  margin : 30px;
+  
+  
+}
+.Title{
+
+  display: flex;
+  justify-content: center;
+  font-family:var(--text_font);
+}
+.input-section{
+  display: flex;
+  gap: 10px;
+  
+}
+input.search-input{
+  height: 30px;
+  width: 470px;
+  border: solid 1.5px;
+  border-radius: 5px;
+  border-color: var(--input_color);
+  margin-bottom: 15px;
+}
+
+.active{
+  background-color: var(--buttons_clr);
+  width: 70px;
+  height: 35px;
+  border-radius: 5px;
+  border: none;
+  font-family: var(--text_font);
+  color: white;
+}
+select{
+  background-color:var(--buttons_clr);
+  width:60px ;
+  border: none;
+  color: white;
+}
+.Mode{
+  background-color: var(--buttons_clr);
+  border: none;
+  color: white;
+  height: 35px;
+  width: 35px;
+  border-radius: 5px;
+}
+li{
+  list-style:armenian;
+  list-style-type: square;
+}
+.checkBox{
+  accent-color: var(--buttons_clr);
+  width: 18px;
+  height: 18px;
+  border-color: var(--buttons_clr);
+   
+}
+.testing-line{
+  text-decoration: line-through;
+
+  color: rgb(142, 142, 134);
+}
+ul{
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  
+}
+.line{
+  width: 300px;
+  height: 1px;
+  margin: 5px;
+  
+  background-color: var(--input_color);
+}
+.Todo-line{
+
+  align-content: center;
+  font-size: 14px;
+  
+}
+li{
+  list-style: none;
+  display: flex;
+  gap : 5px;
+}
+.add-section{
+  display: flex;
+  justify-content: end;
+}
+
+.btnToAdd{
+  background-color: var(--buttons_clr);
+  border:none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: white;
+}
+
+.addTodoInput{
+  width: 370px;
+  height:35px;
+  border-radius: 5px;
+  border: solid 1.5px;
+  border-color: var(--input_color);
+}
+.AddList{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  height: 250px;
+  background-color: aquamarine;
+  border-radius: 10px;
+}
+.AddListBtns{
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-content: end;
+  margin-top: 80px;
+  
+ 
+}
+.CancelBtn{
+  width: 90px;
+  height: 38px;
+  background-color: var(--buttons_clr);
+  border-color: var(--buttons_clr);
+  border: solid 1.5px;
+  color: var(--buttons_clr);
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: white;
+  
+}
+.ApplyBtn{
+  width: 90px;
+  height: 38px;
+  background-color: var(--buttons_clr);
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+
+}
+.AddList.NewNoteExpanded{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 0;
+  gap: 0;
+  padding: 0;
+  margin: 0;
+  background-color: rgba(160, 180, 194, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+}
+.AllElement{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 420px;
+  height: 250px;
+  background-color:white;
+  border-radius: 10px;
+}
+.hidden-new-note{
+  display: none;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="Todo.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<section class="todo-list" id="TadoTasks"> 
+    <div class="todo-app">
+      <h1 class="Title"> TODO LIST</h1>
+      
+      <div class="input-section">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search note..." >
+          <button class="filter-btn active">
+            <select name="filter" id="fruits">
+              <option value="ALL" selected> ALL</option>
+              <option value="Completed"> Compl</option>
+              <option value="Ancompleted"> AnCompl </option>
+            </select>  
+          </button>
+          <button id="addBtn" class="Mode"> N </button>
+       
+      </div>
+          <ul id="taskList">
+
+            <!-- Tasks will be added here dynamically -->
+            <li> 
+                <input type="checkbox" class="checkBox" id="checkBox"> 
+                <label id="checkboxLabel" contenteditable="true" class="Todo-line"> NOTE #1 </label> 
+            </li>
+            <hr class="line">
+          
+            <li> <input type="checkbox" class="checkBox" id="checkBox"> 
+            <label id="checkboxLabel" contenteditable="true" class="Todo-line"> NOTE #2 </label>  </li>
+       
+        
+              
+            <!--  <h1 class="testing-line"> this the test that i do for line </h1> -->
+              
+          </ul>     
+      <div class="add-section">
+        <button class="btnToAdd" id="add-list-btn" onclick="NewNoteExpanded()"> A </button>
+      </div>
+      <div class="AddList hidden-new-note" id="new-box">
+        <div class="AllElement" id="AllElement">
+            <h1> NEW NOTE </h1>
+            <input type="text" placeholder=" Input your note..." class="addTodoInput" id="taskInput">
+            <div class="AddListBtns">
+              <button class="CancelBtn" onclick="resetNote()"> CANCEL</button>
+              <button class="ApplyBtn" id="addBtn"> APPLY </button>
+            </div>
+         </div>   
+      </div>
+    </div>
+</section>
+<script src="Todo.js"></script>
+<script src="UIX.js"> </script>
+
+
+</body>
+</html>
