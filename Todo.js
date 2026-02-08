@@ -15,7 +15,7 @@ if(localStorage.TodoList != null){
 
 console.log(tasks)
 
-document.addEventListener('DOMContentLoaded',printTasks(tasks))
+document.addEventListener('DOMContentLoaded',printTasks())
 //window.addEventListener('load', getAllTasks);
   const taskInput = document.getElementById("taskInput")
   const addBtns = document.getElementById("addBtn")
@@ -38,61 +38,50 @@ document.addEventListener('DOMContentLoaded',printTasks(tasks))
     };
 
     tasks.push(NewTasks);
-    //console.log(tasks);
-   // localStorage.setItem(NewTasks.id,JSON.stringify(NewTasks))
+  
    localStorage.setItem("TodoList", JSON.stringify(tasks))
 
-    // taskInput.value = '';
-    // display_task.innerHTML += `
-    //         <hr class="line">
-    //          <li> 
-    //             <input type="checkbox" class="checkBox" id="checkBox"> 
-    //             <label id="checkboxLabel" contenteditable="true" class="Todo-line"> ${NewTasks.text}</label> 
-    //         </li>
-    // `
-    // console.log(display_task)
-   // getAllTasks();
-   
+
+   taskInput.value = '';
+   printTasks()
    
  }  
- function printTasks(arr = []){
-  const List = document.getElementById('taskList')
-  const AllTasks = arr.map( Todo =>{
-    return `
-             <hr class="line">
-            <li> 
-                 <input type="checkbox" class="checkBox" id="checkBox"> 
-                 <label id="checkboxLabel" contenteditable="true" class="Todo-line"> ${Todo.text}</label> 
-            </li>
-    `
-  })
-  List.insertAdjacentHTML('beforeend',AllTasks.join(''))
+ function printTasks(){
+  // const List = document.getElementById('taskList')
+  // const AllTasks = arr.map( Todo =>{
+  //   return `
+  //            <hr class="line">
+  //           <li> 
+  //                <input type="checkbox" class="checkBox" id="checkBox"> 
+  //                <label id="checkboxLabel" contenteditable="true" class="Todo-line"> ${Todo.text}</label> 
+  //           </li>
+  //   `
+  // })
+  // List.insertAdjacentHTML('beforeend',AllTasks.join(''))
+  const display_task = document.getElementById("taskList")
+  let index = 0;
+  let List = '';
+    while(index < tasks.length)
+    {
+      if(index == 0 ){
+         List += `
+           
+            <li> <input type="checkbox" class="checkBox" id="checkBox"> 
+            <label id="checkboxLabel" contenteditable="true" class="Todo-line">${tasks[index].text} </label>  </li>
+       `
+      }else{
+           List += `
+            <hr class="line">
+            <li> <input type="checkbox" class="checkBox" id="checkBox"> 
+            <label id="checkboxLabel" contenteditable="true" class="Todo-line">${tasks[index].text} </label>  </li>
+       `
+      }
+        index++;
+    }
+    display_task.innerHTML = List;
  }
- printTasks(tasks);        
-// function getAllTasks()
-// {
-//       let len = localStorage.length;
-//       //let lenOfTasks = tasks.length;
-//      // console.log(len);
-//       //console.log(lenOfTasks);
-//      // const display_task = document.getElementById("taskList")
-//       let index = 0;
-//     while(index < len)
-//     {
-//        const key = localStorage.key(index)
-//        const value =JSON.parse(localStorage.getItem(key)) ;
-//       console.log(key);
-//       console.log(value)
-//        display_task.innerHTML += `
-//             <hr class="line">
-//             <li> <input type="checkbox" class="checkBox" id="checkBox"> 
-//             <label id="checkboxLabel" contenteditable="true" class="Todo-line">${value.text} </label>  </li>
-//        `
-//         index++;
-//     }
-// }           // Read  
-//getAllTasks();
-
+ 
+ //printTasks(tasks);
 // const ReloadBtn = document.getElementById("RelaodBtn");
 // DeleteBtn.addEventListener('click',() => {
 //   location.reload()
