@@ -20,16 +20,31 @@ function resetNote(){
 
 const checkBoxs = document.querySelectorAll(".checkBox");
 let checkboxLabels = document.querySelectorAll("label");
-for(const key in checkBoxs){
-  checkBoxs[key].addEventListener('change', () => {
-    if(checkBoxs[key].checked){
+for(let i = 0 ; i < checkBoxs.length ; i++){
+  checkBoxs[i].addEventListener('change', ()=> {
+
+     if(checkBoxs[i].checked){
      // console.log("checked")
       
-      checkboxLabels[key].classList.add('testing-line')
+      checkboxLabels[i].classList.add('testing-line')
 
     }else{
-      checkboxLabels[key].classList.remove('testing-line')
+      checkboxLabels[i].classList.remove('testing-line')
       //console.log("not checked")
     }
   })
-}
+   
+  }
+// for(const key of checkBoxs){
+//   checkBoxs[key].addEventListener('click', () => {
+//     if(checkBoxs[key].checked){
+//      // console.log("checked")
+      
+//       checkboxLabels[key].classList.add('testing-line')
+
+//     }else{
+//       checkboxLabels[key].classList.remove('testing-line')
+//       //console.log("not checked")
+//     }
+//   })
+// }

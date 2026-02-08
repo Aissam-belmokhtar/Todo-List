@@ -73,10 +73,14 @@ li{
   border-color: var(--buttons_clr);
    
 }
-.testing-line{
+/*.testing-line{
   text-decoration: line-through;
 
   color: rgb(142, 142, 134);
+}*/
+input[type="checkbox"]:checked + label {
+    text-decoration: line-through;
+    color: rgb(142, 142, 134);
 }
 ul{
   display: flex;
