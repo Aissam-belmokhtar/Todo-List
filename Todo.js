@@ -12,9 +12,7 @@ if(localStorage.TodoList != null){
   // },
   ];
 }
-
 console.log(tasks)
-
 document.addEventListener('DOMContentLoaded',printTasks())
 //window.addEventListener('load', getAllTasks);
   const taskInput = document.getElementById("taskInput")
@@ -87,18 +85,32 @@ document.addEventListener('DOMContentLoaded',printTasks())
 //   location.reload()
 // })
 // updateTask(id, changes)
+// const checkBoxs = document.getElementById('checkBox')
 
+// for(let i = 0; i < checkBoxs.length ; i++ ){
+//   checkBoxs[i].addEventListener('change',()=>{
+//     if(this.checked){
+//       tasks[i].completed = true;
+      
+//     }
+//   })
+// }
 function deleteTask(id)
 {
   localStorage.removeItem(id)
   location.reload();
 }       
-
 // Delete
 //tasks count
 // search part
-
 const search_input = document.getElementById("searchInput");
+//const TheList = JSON.parse(localStorage.getItem("TodoList"))
 search_input.addEventListener("input", (e) => {
   console.log(e.target.value);
+  
+  for(let index = 0; index < checkBoxs.length ; index++){
+    if((tasks[index].text).include()){
+      console.log(TheList[index])
+    }
+  }
 })
